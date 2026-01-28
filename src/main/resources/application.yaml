@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: vacancy
+
+  liquibase:
+    enabled: true
+    change-log: db/changelog/master.yml
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vacancy
+    username: aboba
+    password: aboba
+
+  elasticsearch:
+    uris: http://localhost:9200
+    username: aboba
+    password: aboba
