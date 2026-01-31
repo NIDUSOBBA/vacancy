@@ -40,5 +40,5 @@ public class VacancyMapper {
         }
         return vacancyDto;
     }
-
+//Генна на
 }

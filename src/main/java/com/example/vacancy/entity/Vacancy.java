@@ -34,4 +34,5 @@ public class Vacancy {
         this.fieldActivity = fieldActivity;
         this.description = description;
     }
+    //Генна на
 }

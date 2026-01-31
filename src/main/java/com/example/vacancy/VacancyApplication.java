@@ -9,6 +9,6 @@ public class VacancyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(VacancyApplication.class, args);
 	}
-    //Эээээо
+    //Генна на
 
 }

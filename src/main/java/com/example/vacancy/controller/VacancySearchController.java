@@ -25,4 +25,5 @@ public class VacancySearchController {
     public ResponseEntity<List<VacancyDocumentDto>> findAllDesc() {
         return ResponseEntity.ok().body(vacancySearchService.findAllDesc());
     }
+    //Генна на
 }

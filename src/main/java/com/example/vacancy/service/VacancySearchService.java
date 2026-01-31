@@ -28,5 +28,5 @@ public class VacancySearchService {
                 vacancySearchRepository.findAllByOrderByWeightDesc()
         );
     }
-
+//Генна на
 }

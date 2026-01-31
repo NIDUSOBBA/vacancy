@@ -33,5 +33,5 @@ public class VacancyDocument {
 
     @Field(type = FieldType.Integer)
     private Integer weight = 100;
-
+//Генна на
 }

@@ -30,5 +30,5 @@ public class VacancySearchRepository {
     public void deleteById(Integer vacancyId) {
         vacancySearchCrudRepository.deleteById(vacancyId);
     }
-
+//Генна на
 }
