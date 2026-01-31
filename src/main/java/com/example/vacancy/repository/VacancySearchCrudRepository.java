@@ -12,5 +12,5 @@ public interface VacancySearchCrudRepository extends ElasticsearchRepository<Vac
     List<VacancyDocument> findAllByOrderByWeightDesc();
 
     List<VacancyDocument> findAllByOrderByWeightAsc();
-//Генна на
+
 }

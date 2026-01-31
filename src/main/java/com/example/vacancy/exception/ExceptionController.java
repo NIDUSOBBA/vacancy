@@ -1,6 +1,5 @@
 package com.example.vacancy.exception;
 
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -21,5 +20,4 @@ public class ExceptionController {
     public Map<String, String> handleVacancyNotFound(VacancyNotFound vacancyNotFound) {
         return exceptionWriter(vacancyNotFound);
     }
-//Генна на
 }

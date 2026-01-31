@@ -32,5 +32,5 @@ public class VacancyRepository {
     public void delete(Vacancy vacancy) {
         vacancyCrudRepository.delete(vacancy);
     }
-//Генна на
+
 }

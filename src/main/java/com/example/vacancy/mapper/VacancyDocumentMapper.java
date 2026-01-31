@@ -37,5 +37,5 @@ public class VacancyDocumentMapper {
         }
         return vacancyDocumentDto;
     }
-    //Генна на
+
 }
