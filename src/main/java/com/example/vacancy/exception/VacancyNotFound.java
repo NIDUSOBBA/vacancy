@@ -13,4 +13,5 @@ public class VacancyNotFound extends RuntimeException {
     public String getMessage() {
         return MESSAGE + id;
     }
+    //Генна на
 }

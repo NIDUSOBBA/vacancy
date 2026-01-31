@@ -41,5 +41,6 @@ public class VacancyController {
     public ResponseEntity<DeleteVacancyDto> deleteVacancyById(@PathVariable Integer id) {
         return ResponseEntity.ok().body(vacancyService.deleteVacancyById(id));
     }
+    //Генна на
 
 }

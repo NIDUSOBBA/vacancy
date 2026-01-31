@@ -75,4 +75,5 @@ public class VacancyService {
         vacancy.setWeight(field);
         return vacancy;
     }
+    //Генна на
 }

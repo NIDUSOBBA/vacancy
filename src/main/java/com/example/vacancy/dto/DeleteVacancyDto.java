@@ -8,4 +8,5 @@ public record DeleteVacancyDto(String status,
     public DeleteVacancyDto {
         status = "Ликвидирован";
     }
+    //Генна на
 }

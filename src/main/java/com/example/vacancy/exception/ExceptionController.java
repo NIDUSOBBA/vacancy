@@ -21,5 +21,5 @@ public class ExceptionController {
     public Map<String, String> handleVacancyNotFound(VacancyNotFound vacancyNotFound) {
         return exceptionWriter(vacancyNotFound);
     }
-
+//Генна на
 }

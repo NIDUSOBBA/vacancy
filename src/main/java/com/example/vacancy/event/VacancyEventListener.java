@@ -25,5 +25,5 @@ public class VacancyEventListener {
     public void handleVacancyDeleted(VacancyDeletedEvent event) {
         vacancySyncService.deleteFromIndex(event.vacancyId());
     }
-
+//Генна на
 }
