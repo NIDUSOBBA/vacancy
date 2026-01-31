@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VacancyCrudRepository extends JpaRepository<Vacancy, Integer> {
-    //Генна на
+
 }

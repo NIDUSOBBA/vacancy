@@ -15,5 +15,4 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
         vacancySyncService.syncAllVacancies();
     }
-    //Генна на
 }

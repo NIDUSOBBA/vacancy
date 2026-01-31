@@ -36,5 +36,5 @@ public class VacancySyncService {
     public void deleteFromIndex(Integer vacancyId) {
         vacancySearchRepository.deleteById(vacancyId);
     }
-//Генна на
+
 }
