@@ -1,6 +1,6 @@
 package com.example.vacancy.event;
 
-import com.example.vacancy.service.VacancySyncService;
+import com.example.vacancy.service.ElasticsearchVacancyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionalEventListener;
@@ -9,20 +9,20 @@ import org.springframework.transaction.event.TransactionalEventListener;
 @RequiredArgsConstructor
 public class VacancyEventListener {
 
-    private final VacancySyncService vacancySyncService;
+    private final ElasticsearchVacancyService elasticsearchVacancyService;
 
     @TransactionalEventListener
-    public void handleVacancyCreated(VacancyCreatedEvent event) {
-        vacancySyncService.syncVacancy(event.vacancy());
+    public void handleCreated(VacancyCreatedEvent event) {
+        elasticsearchVacancyService.save(event.vacancy());
     }
 
     @TransactionalEventListener
-    public void handleVacancyUpdated(VacancyUpdatedEvent event) {
-        vacancySyncService.syncVacancy(event.vacancy());
+    public void handleUpdated(VacancyUpdatedEvent event) {
+        elasticsearchVacancyService.save(event.vacancy());
     }
 
     @TransactionalEventListener
-    public void handleVacancyDeleted(VacancyDeletedEvent event) {
-        vacancySyncService.deleteFromIndex(event.vacancyId());
+    public void handleDeleted(VacancyDeletedEvent event) {
+        elasticsearchVacancyService.deleteFromIndex(event.vacancyId());
     }
 }
