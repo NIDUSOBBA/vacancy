@@ -1,7 +1,13 @@
 package com.example.vacancy.dto;
 
-public record VacancyDocumentDto(String nameVacancy,
-                                 String fieldActivity,
+import lombok.Builder;
+
+@Builder
+public record VacancyDocumentDto(String name,
                                  String description,
+                                 String company,
+                                 String location,
+                                 Integer salary,
+                                 String workExperience,
                                  Integer weight) {
 }
