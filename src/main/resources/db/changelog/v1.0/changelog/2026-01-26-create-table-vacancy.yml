@@ -22,17 +22,32 @@ databaseChangeLog:
                     primaryKey: true
               - column:
                   name: name_vacancy
-                  type: VARCHAR(64)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: field_activity
-                  type: VARCHAR(64)
+                  type: VARCHAR(528)
                   constraints:
                     nullable: false
               - column:
                   name: description
+                  type: VARCHAR(528)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: company
+                  type: VARCHAR(528)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: location
                   type: VARCHAR(264)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: salary
+                  type: INTEGER
+                  constraints:
+                    nullable: true
+              - column:
+                  name: work_experience
+                  type: VARCHAR(64)
                   constraints:
                     nullable: false
               - column:
