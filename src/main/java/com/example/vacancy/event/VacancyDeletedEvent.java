@@ -1,5 +1,5 @@
 package com.example.vacancy.event;
 
 
-public record VacancyDeletedEvent(Integer vacancyId) {
+public record VacancyDeletedEvent(Long vacancyId) {
 }
