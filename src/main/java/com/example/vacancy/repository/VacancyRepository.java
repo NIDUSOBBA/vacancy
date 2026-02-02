@@ -1,36 +1,14 @@
 package com.example.vacancy.repository;
 
 import com.example.vacancy.entity.Vacancy;
-import com.example.vacancy.exception.VacancyNotFound;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
+@Repository
+public interface VacancyRepository extends JpaRepository<Vacancy, Long> {
 
-@Component
-@RequiredArgsConstructor
-public class VacancyRepository {
-
-    private final VacancyCrudRepository vacancyCrudRepository;
-
-    public Vacancy save(Vacancy vacancy) {
-        return vacancyCrudRepository.save(vacancy);
-    }
-
-    public List<Vacancy> findAll() {
-        return vacancyCrudRepository.findAll();
-    }
-
-    public Vacancy findById(Integer id) {
-        return vacancyCrudRepository.findById(id).orElseThrow(() -> new VacancyNotFound(id));
-    }
-
-    public Vacancy update(Vacancy vacancy) {
-        return vacancyCrudRepository.save(vacancy);
-    }
-
-    public void delete(Vacancy vacancy) {
-        vacancyCrudRepository.delete(vacancy);
-    }
+    Page<Vacancy> findAll(Pageable sort);
 
 }
