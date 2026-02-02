@@ -1,45 +1,46 @@
 package com.example.vacancy.controller;
 
-import com.example.vacancy.dto.DeleteVacancyDto;
-import com.example.vacancy.dto.UpdateVacancyDto;
-import com.example.vacancy.dto.VacancyDto;
+import com.example.vacancy.dto.*;
 import com.example.vacancy.service.VacancyService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/vacancy")
+@RequestMapping("api/v1/vacancy")
 @RequiredArgsConstructor
+@Validated
 public class VacancyController {
 
     private final VacancyService vacancyService;
 
     @PostMapping
-    public ResponseEntity<VacancyDto> createVacancy(@RequestBody VacancyDto vacancyDto) {
-        return ResponseEntity.ok().body(vacancyService.createVacancy(vacancyDto));
+    public VacancyDto create(@Valid @RequestBody VacancyDto vacancyDto) {
+        return vacancyService.create(vacancyDto);
     }
 
     @GetMapping
-    public ResponseEntity<List<VacancyDto>> getAllVacancies() {
-        return ResponseEntity.ok().body(vacancyService.getAllVacancies());
+    public List<VacancyDto> getAll(@RequestBody VacancyPageDto pageDto) {
+        return vacancyService.getAll(pageDto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<VacancyDto> getVacancyById(@PathVariable Integer id) {
-        return ResponseEntity.ok().body(vacancyService.getVacanciesById(id));
+    public VacancyDto getById(@PathVariable Long id) {
+        return vacancyService.getById(id);
     }
 
     @PatchMapping
-    public ResponseEntity<VacancyDto> updateVacancyById(@RequestBody UpdateVacancyDto updateVacancyDto) {
-        return ResponseEntity.ok().body(vacancyService.updateVacancyById(updateVacancyDto));
+    public VacancyDto updateById(@RequestBody UpdateVacancyDto updateVacancyDto) {
+        return vacancyService.updateById(updateVacancyDto);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<DeleteVacancyDto> deleteVacancyById(@PathVariable Integer id) {
-        return ResponseEntity.ok().body(vacancyService.deleteVacancyById(id));
+    public DeleteVacancyDto deleteById(@PathVariable Long id) {
+        return vacancyService.deleteById(id);
     }
 
 }
