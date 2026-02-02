@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - preConditions:
+      - dbms:
+          type: postgresql
+  - changeSet:
+      id: crete-table-vacancy
+      author: Aboba
+      preConditions:
+        - not:
+            - tableExists:
+              tableName: vacancy
+      changes:
+        - createTable:
+            tableName: vacancy
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: name_vacancy
+                  type: VARCHAR(528)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: VARCHAR(528)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: company
+                  type: VARCHAR(528)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: location
+                  type: VARCHAR(264)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: salary
+                  type: INTEGER
+                  constraints:
+                    nullable: true
+              - column:
+                  name: work_experience
+                  type: VARCHAR(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: weight
+                  type: INTEGER
+                  constraints:
+                    nullable: false
