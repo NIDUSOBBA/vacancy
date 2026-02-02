@@ -1,7 +1,7 @@
 package com.example.vacancy.dto;
 
-public record UpdateVacancyDto(Integer id,
-                               String nameVacancy,
-                               String fieldActivity,
-                               String description) {
+public record UpdateVacancyDto(Long id,
+                               String name,
+                               String description,
+                               Integer salary) {
 }
