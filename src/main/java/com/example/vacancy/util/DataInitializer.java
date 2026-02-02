@@ -1,18 +1,27 @@
 package com.example.vacancy.util;
 
-import com.example.vacancy.service.VacancySyncService;
+import com.example.vacancy.service.ElasticsearchVacancyService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.CommandLineRunner;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class DataInitializer implements CommandLineRunner {
+@Slf4j
+public class DataInitializer {
 
-    private final VacancySyncService vacancySyncService;
+    private final ElasticsearchVacancyService elasticsearchVacancyService;
 
-    @Override
-    public void run(String... args) throws Exception {
-        vacancySyncService.syncAllVacancies();
+    @EventListener(ApplicationReadyEvent.class)
+    public void syncVacanciesOnStartup() {
+        log.info("Start syncing vacancies");
+        try {
+            elasticsearchVacancyService.saveAll();
+            log.info("Vacancies synchronization completed successfully");
+        }catch (Exception e){
+            log.error("Failed to synchronize vacancies: {}", e.getMessage());
+        }
     }
 }
