@@ -3,9 +3,9 @@ package com.example.vacancy.exception;
 public class VacancyNotFound extends RuntimeException {
 
     private static final String MESSAGE = "User with id not found: ";
-    private Integer id;
+    private final Long id;
 
-    public VacancyNotFound(Integer id) {
+    public VacancyNotFound(Long id) {
         this.id=id;
     }
 
@@ -13,4 +13,5 @@ public class VacancyNotFound extends RuntimeException {
     public String getMessage() {
         return MESSAGE + id;
     }
+
 }
