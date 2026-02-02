@@ -13,5 +13,3 @@ spring:
 
   elasticsearch:
     uris: http://localhost:9200
-    username: aboba
-    password: aboba
