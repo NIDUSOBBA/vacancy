@@ -4,7 +4,6 @@ import com.example.vacancy.dto.*;
 import com.example.vacancy.service.VacancyService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
